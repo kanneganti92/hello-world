@@ -151,6 +151,15 @@
           <artifactId>jetty-maven-plugin</artifactId>
           <version>8.0.0.M1</version>
         </plugin>
+	      	
+	
+	      
+	 <plugin>
+      		<groupId>com.spotify</groupId>
+      		<artifactId>docker-maven-plugin</artifactId>
+      		<version>1.2.0</version>
+    	</plugin>
+	      
       </plugins>
     </pluginManagement>
   </build>
