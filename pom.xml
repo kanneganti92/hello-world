@@ -155,7 +155,7 @@
 	      
 	
 	      
-	<!--    <plugin>
+	    <plugin>
       <groupId>com.spotify</groupId>
       <artifactId>docker-maven-plugin</artifactId>
       <version>1.2.0</version>
@@ -163,8 +163,8 @@
         <imageName>dockerexample</imageName>
         <baseImage>java</baseImage>
         <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-         copy the service's jar file from target into the root directory of the image --> 
-       <!-- <resources>
+        <!-- copy the service's jar file from target into the root directory of the image --> 
+        <resources>
            <resource>
              <targetPath>/</targetPath>
              <directory>${project.build.directory}</directory>
@@ -172,10 +172,10 @@
            </resource>
         </resources>
       </configuration>
-    </plugin> -->
+    </plugin> 
  
 	      
-	      <plugin>
+	     <!-- <plugin>
   <groupId>com.google.cloud.tools</groupId>
   <artifactId>jib-maven-plugin</artifactId>
   <version>0.9.0</version>
@@ -184,7 +184,7 @@
       <image>gcr.io/my-project/image-built-with-jib</image>
     </to>
   </configuration>
-</plugin>
+</plugin> -->
 	      
 	      
       </plugins>
