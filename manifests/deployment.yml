@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: kannegantihelloworldk 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kannegantihelloworldk 
+    spec:
+      containers:
+        - name: kannegantihelloworldk 
+          image: nithinregistry1.azurecr.io/kannegantihelloworldk
+          ports:
+          - containerPort: 80
