@@ -248,7 +248,7 @@
                                       <version>1.2.0</version>
                                       <configuration>
                                                <dockerDirectory>${project.basedir}</dockerDirectory>
-                                               <imageName>docker-interact.g.nithin.net/folder/${project.name}</imageName>
+                                               <!--<imageName>docker-interact.g.nithin.net/folder/${project.name}</imageName> -->
                                                <forceTags>true</forceTags>
                                                <imageTags>
                                                       <imageTag>${project.version}</imageTag>
