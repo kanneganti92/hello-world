@@ -255,5 +255,48 @@
 		<url>http://35.227.60.157:8081/repository/maven-snapshots/</url>
 	</snapshotRepository>
 	</distributionManagement>
+	
+	
+	
+	<profiles>
+        <profile>
+                <id>docker</id>
+                <build>
+                      <plugins>
+                              <plugin>
+                                      <groupId>com.spotify</groupId>
+                                      <artifactId>docker-maven-plugin</artifactId>
+                                      <version>1.2.0</version>
+                                      <configuration>
+                                               <dockerDirectory>${project.basedir}</dockerDirectory>
+                                               <imageName>docker-interact.g.nithin.net/folder/${project.name}</imageName>
+                                               <forceTags>true</forceTags>
+                                               <imageTags>
+                                                      <imageTag>${project.version}</imageTag>
+                                                      <imageTag>latest</imageTag>
+                                                </imageTags>
+                                       </configuration>
+                     <executions>
+                            <execution> 
+                                <id>docker-build</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>docker-push</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>push</goal>
+                                </goals>
+                            </execution>
+                    </executions>
+                              </plugin>
+                      </plugins>
+               </build>
+       </profile>
+</profiles>
+	
   
 </project>
