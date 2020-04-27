@@ -259,7 +259,7 @@
                                                 </imageTags>
                                        </configuration>
                      <executions>
-                         <!--   <execution> 
+                           <execution> 
                                 <id>docker-build</id>
                                 <phase>package</phase>
                                 <goals>
@@ -278,43 +278,6 @@
                       </plugins>
                </build>
        </profile>
-</profiles>  -->
-	
-  
-	
-    <execution>
-      <id>build-image</id>
-      <phase>package</phase>
-      <goals>
-        <goal>build</goal>
-      </goals>
-    </execution>
-    <execution>
-      <id>tag-image</id>
-      <phase>package</phase>
-      <goals>
-        <goal>tag</goal>
-      </goals>
-      <configuration>
-        <image>my-image:${project.version}</image>
-        <newName>https://hub.docker.com/u/kanneganti92/my-image:${project.version}</newName>
-      </configuration>
-    </execution>
-    <execution>
-      <id>push-image</id>
-      <phase>deploy</phase>
-      <goals>
-        <goal>push</goal>
-      </goals>
-      <configuration>
-        <imageName>https://hub.docker.com/u/kanneganti92/my-image:${project.version}</imageName>
-      </configuration>
-    </execution>        
-  </executions>
-					</plugin>
-                      </plugins>
-               </build>
-       </profile>
-</profiles>
+</profiles> 
 	
 </project>
