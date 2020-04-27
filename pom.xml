@@ -251,7 +251,7 @@
 				      
                                       <configuration>
                                                <dockerDirectory>${project.basedir}</dockerDirectory>
-                                               <imageName>https://hub.docker.com/u/kanneganti92/${project.name}</imageName>
+                                             <!--  <imageName>https://hub.docker.com/u/kanneganti92/${project.name}</imageName> -->
                                                <forceTags>true</forceTags>
                                                <imageTags>
                                                       <imageTag>${project.version}</imageTag>
