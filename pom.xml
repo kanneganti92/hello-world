@@ -247,13 +247,6 @@
                                       <artifactId>docker-maven-plugin</artifactId>
                                       <version>1.2.0</version>
 				      
-				      <configuration>
-   <pushRegistry>${docker.push.registry}</pushRegistry>
-   <authConfig>
-      <username>${kanneganti92}</username>
-      <password>${9491544532}</password>
-   </authConfig>
-</configuration>
 				      
 				      
                                       <configuration>
