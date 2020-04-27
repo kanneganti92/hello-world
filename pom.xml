@@ -246,6 +246,16 @@
                                       <groupId>com.spotify</groupId>
                                       <artifactId>docker-maven-plugin</artifactId>
                                       <version>1.2.0</version>
+				      
+				      <configuration>
+   <pushRegistry>${docker.push.registry}</pushRegistry>
+   <authConfig>
+      <username>${kanneganti92}</username>
+      <password>${9491544532}</password>
+   </authConfig>
+</configuration>
+				      
+				      
                                       <configuration>
                                                <dockerDirectory>${project.basedir}</dockerDirectory>
                                                <imageName>https://hub.docker.com/u/kanneganti92/${project.name}</imageName>
@@ -256,7 +266,7 @@
                                                 </imageTags>
                                        </configuration>
                      <executions>
-                            <execution> 
+                         <!--   <execution> 
                                 <id>docker-build</id>
                                 <phase>package</phase>
                                 <goals>
@@ -275,7 +285,43 @@
                       </plugins>
                </build>
        </profile>
-</profiles>
+</profiles>  -->
 	
   
+	
+    <execution>
+      <id>build-image</id>
+      <phase>package</phase>
+      <goals>
+        <goal>build</goal>
+      </goals>
+    </execution>
+    <execution>
+      <id>tag-image</id>
+      <phase>package</phase>
+      <goals>
+        <goal>tag</goal>
+      </goals>
+      <configuration>
+        <image>my-image:${project.version}</image>
+        <newName>https://hub.docker.com/u/kanneganti92/my-image:${project.version}</newName>
+      </configuration>
+    </execution>
+    <execution>
+      <id>push-image</id>
+      <phase>deploy</phase>
+      <goals>
+        <goal>push</goal>
+      </goals>
+      <configuration>
+        <imageName>https://hub.docker.com/u/kanneganti92/my-image:${project.version}</imageName>
+      </configuration>
+    </execution>        
+  </executions>
+
+                      </plugins>
+               </build>
+       </profile>
+</profiles>
+	
 </project>
