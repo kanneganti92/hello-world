@@ -7,3 +7,6 @@ COPY server/target/server.jar /opt
 # Maintainer 
 MAINTAINER "valaxytech@gmail.com" 
 #COPY ./webapp.war /usr/local/tomcat/webapps
+
+ENV dockerId
+ENV dockerPassword
