@@ -1,0 +1,9 @@
+- hosts: slave-1
+  tasks:
+    - name: Copy files to remote host
+      copy:
+        src: /var/lib/jenkins/workspace/hello-world/target/
+        dest: /tmp/copy-test/
+        owner: kanneganti1101
+        mode: 0755
+      become: true
