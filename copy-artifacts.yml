@@ -2,7 +2,7 @@
   tasks:
     - name: Copy files to remote host
       copy:
-        src: /var/lib/jenkins/workspace/hello-world/target/
+        src: /var/lib/jenkins/workspace/CI-test/server/target/
         dest: /tmp/copy-test/
         owner: kanneganti1101
         mode: 0755
